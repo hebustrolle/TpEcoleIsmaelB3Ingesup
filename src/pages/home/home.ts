@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
+import { Camera, CameraOptions } from '@ionic-native/camera';
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -10,10 +12,32 @@ export class HomePage {
 
   app: AppModel;
 //app: any={nom: String, version: Number};
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController, private camera: Camera) {
   //  this.app.nom="Titre01";
     //this.app.version=0.1;
     this.app = new AppModel("Titre001", 0.1);
+  }
+
+
+
+  camerapicture(){
+
+    const options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE
+    }
+
+    this.camera.getPicture(options).then((imageData) => {
+     // imageData is either a base64 encoded string or a file URI
+     // If it's base64:
+     let base64Image = 'data:image/jpeg;base64,' + imageData;
+    }, (err) => {
+     // Handle error
+    });
+
+
   }
 
 
