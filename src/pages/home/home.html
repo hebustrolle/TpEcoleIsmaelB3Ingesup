@@ -29,8 +29,9 @@
 
 </ion-list>
 
-
 <button ion-button color="light" round  (click)="showPrompt()">Round light </button>
 <button ion-button color="light" round  (click)="camerapicture()">Camera </button>
+
+<img [src]="base64Image" *ngif="base64Image"/>
 
 </ion-content>
