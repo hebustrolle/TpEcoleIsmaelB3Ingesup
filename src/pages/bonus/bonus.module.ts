@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { BonusPage } from './bonus';
 import { Vibration } from '@ionic-native/vibration';
+import { TextToSpeech } from '@ionic-native/text-to-speech';
 @NgModule({
   declarations: [
     BonusPage,
@@ -10,7 +11,8 @@ import { Vibration } from '@ionic-native/vibration';
     IonicPageModule.forChild(BonusPage),
   ],
   providers: [
-    Vibration
+    Vibration,
+    TextToSpeech
   ]
 })
 export class BonusPageModule {}

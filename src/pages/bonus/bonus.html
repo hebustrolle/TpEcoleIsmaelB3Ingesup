@@ -16,4 +16,7 @@
 <ion-content padding>
 
   <button ion-button color="light" round  (click)="vibrationfunc()">Vibration </button>
+  <ion-input tpye="text" value="Texte pour parler" name="name" [(ngModel)]="name"></ion-input>
+  <button ion-button color="light" round  (click)="Textparler()">Envoyer l'input pour le TextToSpeech </button>
+
 </ion-content>
