@@ -17,11 +17,12 @@ import { Geolocation } from '@ionic-native/geolocation';
 export class GeolocPage {
 
   coord1: Geoun;
-  coord2: Geodeux;
+  coord2: Array<Geodeux>;
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private geolocation: Geolocation) {
     this.coord1 = new Geoun(0, 0);
-    this.coord2 = new Geodeux(0, 0);
+    this.coord2 = new Array<Geodeux>();
     this.geo();
   }
 
@@ -42,7 +43,7 @@ export class GeolocPage {
     let watch = this.geolocation.watchPosition();
     watch.subscribe((data) => {
      // data can be a set of coordinates, or an error (if an error occurred).
-     this.coord2 = new Geodeux(data.coords.latitude, data.coords.longitude);
+     this.coord2.push(new Geodeux(data.coords.latitude, data.coords.longitude));
 
     });
 

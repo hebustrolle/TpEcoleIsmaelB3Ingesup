@@ -14,8 +14,8 @@ export class HomePage {
 
 
   app: AppModel;
-  base64Image: string;
-  base64Image2: string;
+public  base64Image: string;
+public  base64Image2: string;
 
 //app: any={nom: String, version: Number};
   constructor(public navCtrl: NavController, public alertCtrl: AlertController, private camera: Camera, private base64ToGallery: Base64ToGallery, private localNotifications: LocalNotifications) {
@@ -44,8 +44,7 @@ export class HomePage {
 
         res => this.notif('Image sauvegardée'),
         err => this.notif('Image non sauvegardée...')
-
-           );
+        );
     }, (err) => {
 
 

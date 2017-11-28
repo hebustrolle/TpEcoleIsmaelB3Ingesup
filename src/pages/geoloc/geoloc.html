@@ -17,10 +17,10 @@
   <h1>
     getCurrentPosition
   </h1>
-  <p>  {{coord1.latitude}} {{coord1.longitude}}</p>
+  <p> latitude :  {{coord1.latitude}} , longitude : {{coord1.longitude}}</p>
 
   <h1>
     watchPosition
   </h1>
-  <p>  {{coord2.latitude}} {{coord2.longitude}}</p>
+  <p  *ngFor="let tab of coord2"> latitude : {{tab.latitude}}, longitude : {{tab.longitude}}</p>
 </ion-content>
