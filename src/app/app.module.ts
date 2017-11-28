@@ -6,7 +6,9 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { BonusPage } from '../pages/bonus/bonus';
 import { VideoPageModule } from '../pages/video/video.module';
+import { BonusPageModule } from '../pages/bonus/bonus.module';
 import { GeolocPageModule } from '../pages/geoloc/geoloc.module';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -24,6 +26,7 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
   imports: [
     BrowserModule,
     VideoPageModule,
+    BonusPageModule,
     GeolocPageModule,
     IonicModule.forRoot(MyApp),
   ],
