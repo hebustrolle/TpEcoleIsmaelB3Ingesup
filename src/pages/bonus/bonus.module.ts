@@ -3,6 +3,7 @@ import { IonicPageModule } from 'ionic-angular';
 import { BonusPage } from './bonus';
 import { Vibration } from '@ionic-native/vibration';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
+import { Toast } from '@ionic-native/toast';
 @NgModule({
   declarations: [
     BonusPage,
@@ -12,7 +13,8 @@ import { TextToSpeech } from '@ionic-native/text-to-speech';
   ],
   providers: [
     Vibration,
-    TextToSpeech
+    TextToSpeech,
+    Toast
   ]
 })
 export class BonusPageModule {}

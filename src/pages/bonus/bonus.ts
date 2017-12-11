@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Vibration } from '@ionic-native/vibration';
 import { TextToSpeech } from '@ionic-native/text-to-speech';
+import { Toast } from '@ionic-native/toast';
 
 /**
  * Generated class for the BonusPage page.
@@ -19,8 +20,8 @@ export class BonusPage {
 
 
   name: string;
-  
-  constructor(public navCtrl: NavController, public navParams: NavParams, private vibration: Vibration, private tts: TextToSpeech) {
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private vibration: Vibration, private tts: TextToSpeech, private toast: Toast) {
   }
 
 
@@ -33,6 +34,25 @@ this.vibration.vibrate(1000);
       .then(() => console.log('Success'))
       .catch((reason: any) => console.log(reason));
   }
+
+  ToastHaut(){
+    this.toast.show(`Je suis le toast du haut`, '5000', 'top').subscribe(
+  toast => {
+    console.log(toast);
+  }
+);
+
+  }
+
+  ToastBas(){
+    this.toast.show(`Je suis le toast du bas`, '5000', 'bottom').subscribe(
+  toast => {
+    console.log(toast);
+  }
+);
+
+  }
+
 
 
 }
